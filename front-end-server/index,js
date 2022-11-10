@@ -14,24 +14,26 @@ var requestOptions = {
     redirect: 'follow'
   };
   
-  const getService = fetch("http://localhost:8000/servicerepair", requestOptions)
+  fetch("http://localhost:8015/servicerepair", requestOptions)
     .then(response => response.text())
     .then(result => {
-        serviceButton.addEventListener("click", function(event){
+               
+            serviceButton.addEventListener("click", function(event){
               
             console.log(result);
-
-
             })
-            
+
+    })
     .catch(error => console.log('error', error));
+       
 
 
 
 
 
 
-  const getVehiclesInShop = fetch("http://localhost:8000/vehicles", requestOptions)
+
+  const getVehiclesInShop = fetch("http://localhost:8015/vehicles", requestOptions)
         .then(response => response.text())
         .then(result => {
             
@@ -44,7 +46,7 @@ var requestOptions = {
 
 
         
-  const getAwaitingCustomers = fetch("http://localhost:8000/customers", requestOptions)
+  const getAwaitingCustomers = fetch("http://localhost:8015/customers", requestOptions)
         .then(response => response.text())
         .then(result => {
             
