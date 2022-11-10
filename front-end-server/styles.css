@@ -46,7 +46,7 @@
     float: bottom;
     width: 31%;
     margin: 6px 1.15%;
-    height: 27px;
+    height: 40px;
     border:#F09A9D;
     background-color: #a2d8f7;    /* Medium blue */
   }
@@ -91,6 +91,22 @@
 
   .scottShop {
     vertical-align: bottom;
+  }
+
+  .content {
+
+    text-align: center;
+    font-size: xx-large;
+  }
+
+  .form-control {
+    float: bottom;
+    width: 275px;
+    margin: 6px 1.15%;
+    height: 120px;
+    border:#161515;
+    border-width: 3px;
+    background-color: #f2f5f7;    /* Medium blue */
   }
 
   
