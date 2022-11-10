@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .menu {
+    height: 100px;
+    background-color: #63a0e6;    /* Medium blue */
+  }
+  
+  .sidebar {
+    height: 300px;
+    background-color: #F09A9D;    /* Red */
+  }
+  
+  .content {
+    height: 400px;
+    background-color: #F5CF8E;    /* Yellow */
+  }
+  
+  .footer {
+    height: 100px;
+    background-color: #D6E9FE;    /* Light blue */
+  }
+
+  .sidebar {
+    width: 200px;                 /* Add this */
+    height: 500px;
+    background-color: #F09A9D;
+  }
+
+  .page {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+
+  .page {
+    width: 900px;
+    margin: 0 auto;
+    border: 1px solid red;  /* Add this */
+  }
+
+  .column {
+    float: bottom;
+    width: 31%;
+    margin: 6px 1.15%;
+    height: 27px;
+    border:#F09A9D;
+    background-color: #a2d8f7;    /* Medium blue */
+  }
+
+  .avatar {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 25px;
+    border-radius: 40px;
+    background-color: #D6E9FE;
+  }
+  
+  .username {
+    margin-top: 30px;
+  }
+  
+  .comment {
+    margin: 10px;
+    overflow: hidden;  /* This is important */
+  }
+
+  .btn {
+    float: right;
+    width: 60px;
+    height: 20px;
+    border-radius: 40px;
+    border:#eb4a4f;
+    background-color: #f7a2db;    /* Medium blue */
+  }
+
+  .shopTitle {
+    text-align: center;
+    vertical-align: bottom;
+    float: right;
+    width: 300px;
+    height: 60px;
+    margin: 25px;
+    border-radius: 1000px;
+    background-color: #D6E9FE;
+  }
+
+  .scottShop {
+    vertical-align: bottom;
+  }
+
+  

@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .menu {
+    height: 100px;
+    background-color: #63a0e6;    /* Medium blue */
+  }
+  
+  .sidebar {
+    height: 300px;
+    background-color: #F09A9D;    /* Red */
+  }
+  
+  .content {
+    height: 400px;
+    background-color: #F5CF8E;    /* Yellow */
+  }
+  
+  .footer {
+    height: 100px;
+    background-color: #D6E9FE;    /* Light blue */
+  }
+
+  .sidebar {
+    width: 200px;                 /* Add this */
+    height: 500px;
+    background-color: #F09A9D;
+  }
