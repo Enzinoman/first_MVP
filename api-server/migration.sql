@@ -4,7 +4,7 @@ DROP TABLE servicerepair CASCADE;
 
 
 
- CREATE TABLE customers(
+CREATE TABLE customers(
     id serial PRIMARY KEY,
     customer_name text,
     customer_phone_number text
@@ -12,7 +12,8 @@ DROP TABLE servicerepair CASCADE;
     
 );
 
-CREATE TABLE vehicles(
+ CREATE TABLE vehicles(
+    img text,
     id serial PRIMARY KEY,
     vin text,
     make text,
@@ -26,6 +27,7 @@ CREATE TABLE vehicles(
 
 
 CREATE TABLE servicerepair(
+    img text,
     id serial PRIMARY KEY,
     symptom text,
     service_repair text,
@@ -35,7 +37,7 @@ CREATE TABLE servicerepair(
     veh_id serial,
         FOREIGN KEY (veh_id) REFERENCES vehicles(id)
             ON DELETE CASCADE
-) 
+)  
 
 
 

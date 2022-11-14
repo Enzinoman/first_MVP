@@ -1,39 +1,99 @@
-var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-  
-  const serviceButton = document.getElementById('serviceBtn');
+ // import {something, somethingElse} from "./components.js";
+ const serviceButton = document.getElementById('serviceBtn');
   const vehButton = document.getElementById('vehBtn');
   const custButton = document.getElementById('custBtn');
   let content = document.getElementById('content');
+
+ 
+ 
+  serviceButton.addEventListener('click', getServicedata);
+  // vehButton.addEventListener('click', getVehicleData);
+  // custButton.addEventListener('click', getCustomerInfo);
    
   
+function getServicedata(){
+
+
   var requestOptions = {
     method: 'GET',
-    redirect: 'follow'
-  };
+    redirect: 'follow',
+    //mode: "no-cors"
+  }
   
-  fetch("http://localhost:8015/servicerepair", requestOptions)
-    .then(response => response.text())
+  fetch("http://localhost:8000/servicerepair", requestOptions)
+    .then(response => response.json())
     .then(result => {
-               
-            serviceButton.addEventListener("click", function(event){
-              
-            console.log(result);
-            })
 
+      JSON.parse(displayServices(result));
+        
+    // something();
+    // somethingElse();
     })
     .catch(error => console.log('error', error));
-       
+
+  }
+       document.getElementById('displayArea').innerHTML = "";
+function displayServices(results){
+for(let i = 0; results.length; i++){
+    const displayArea = document.getElementById('displayArea');
+    const services = results[i];
+    console.log(results);
+    const carImage  = services.carImage;
+    const symptom = services.symptom;
+    const repair = services.service_repair;
+    const techName = services.tech_name;
+    const customer = services.cust_name;
+
+    const ul = document.createElement('ul');
+    const name = document.createElement('h1');
+    name.innerText = "Customer: " + customer;
+    const image = document.createElement('img');
+    image.src = results[i].img;
+    const liSymptom = document.createElement('li');
+    liSymptom.innerText = "Symptom: " + symptom;
+    const liRepair = document.createElement('li');
+    liRepair.innerText = "Repair: " + repair;
+    const liTechName = document.createElement('li');
+    liTechName.innerText = "Technician: " + techName;
+
+    ul.appendChild(name);
+    ul.appendChild(image);
+    ul.appendChild(liSymptom);
+    ul.appendChild(liRepair);
+    ul.appendChild(liTechName);
+
+    displayArea.appendChild(ul);
+   
+}
+}
+
+
+/* const form = document. getElementById('form');
+
+form.addEventListener('submit', function(e) 
+   e.preventDefault();
+
+   const payLoad = new FormData(form);
+
+   console.log([...payload]);
+
+fetch('http://localhost:8000/servicerepair'){
+
+method: "POST",
+body: payload,
+
+}
+
+.then(res => res,json())
+.then(data => console.log(data))
+.catch(err => console.log(err));
+
+
+}) */
 
 
 
-
-
-
-
-  const getVehiclesInShop = fetch("http://localhost:8015/vehicles", requestOptions)
+ /* const getVehiclesInShop = fetch("http://localhost:8015/vehicles", requestOptions)
         .then(response => response.text())
         .then(result => {
             
@@ -61,7 +121,7 @@ var requestOptions = {
 
 
   
-  /* fetch("https://emojihub.herokuapp.com/api/all/group_face_positive", requestOptions)
+   fetch("https://emojihub.herokuapp.com/api/all/group_face_positive", requestOptions)
       .then(response => response.json())
       .then(result => {
           console.log(result);
@@ -172,5 +232,7 @@ var requestOptions = {
       .catch(error => console.log('error', error)
       
         ) */
+
+
   
   

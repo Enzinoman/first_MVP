@@ -4,72 +4,46 @@
     box-sizing: border-box;
   }
 
-  .menu {
-    height: 100px;
-    background-color: #63a0e6;    /* Medium blue */
-  }
-  
-  .sidebar {
-    height: 300px;
-    background-color: #F09A9D;    /* Red */
-  }
-  
-  .content {
-    height: 400px;
-    background-color: #F5CF8E;    /* Yellow */
-  }
-  
-  .footer {
-    height: 100px;
-    background-color: #D6E9FE;    /* Light blue */
-  }
-
-  .sidebar {
-    width: 200px;                 /* Add this */
-    height: 500px;
-    background-color: #F09A9D;
-  }
-
   .page {
     width: 900px;
+    height: 1200px;
     margin: 0 auto;
-  }
-
-
-  .page {
-    width: 900px;
-    margin: 0 auto;
+    background-color: #3c8de9;    /* Medium blue */
     border: 1px solid red;  /* Add this */
   }
 
-  .column {
-    float: bottom;
-    width: 31%;
-    margin: 6px 1.15%;
-    height: 40px;
-    border:#F09A9D;
-    background-color: #a2d8f7;    /* Medium blue */
-  }
 
-  .avatar {
+
+  .section1 {
     float: left;
-    width: 60px;
-    height: 60px;
-    margin: 25px;
-    border-radius: 40px;
-    background-color: #D6E9FE;
+    height: 7%;
+    width: 100%;
+    padding: 1%;
+
   }
-  
-  .username {
-    margin-top: 30px;
-  }
-  
-  .comment {
-    margin: 10px;
-    overflow: hidden;  /* This is important */
+  .sectionOneColumn {
+    float: left;
+    width: 25%;
+    height: 100%;
+    padding: 0.006%;
+    margin: 0%;
   }
 
-  .btn {
+  .menu {
+    height: 100%;
+    padding: 0.006%;
+    background-color: #3c8de9;    /* Medium blue */
+  }
+  
+  .menuItem {
+    height: 45%;
+    width: 90%;
+    margin: 1%;
+    padding: 0.6%;
+    background-color: #bbd0e9;    /* Medium blue */
+  }
+
+  .menuBtn {
     float: right;
     width: 60px;
     height: 20px;
@@ -78,35 +52,125 @@
     background-color: #f7a2db;    /* Medium blue */
   }
 
-  .shopTitle {
-    text-align: center;
-    vertical-align: bottom;
+  .contactInfo {
+    color: white;
+  }
+
+  .img1 {  
     float: right;
-    width: 300px;
-    height: 60px;
-    margin: 25px;
-    border-radius: 1000px;
-    background-color: #D6E9FE;
-  }
+    width: 100%;  
+    height: 120%;  
+    }
 
-  .scottShop {
-    vertical-align: bottom;
-  }
+  .img2 {  
+    float: left;
+    max-width: 100%;  
+    height: 120%;  
+    }
 
-  .content {
+  .section2 {
+      float: left;
+      height:48%;
+      width: 100%;
+      padding: 1%;
+      padding-right: 10%;
+      overflow: auto;
 
-    text-align: center;
-    font-size: xx-large;
-  }
+    }
 
-  .form-control {
-    float: bottom;
-    width: 275px;
-    margin: 6px 1.15%;
-    height: 120px;
-    border:#161515;
-    border-width: 3px;
-    background-color: #f2f5f7;    /* Medium blue */
-  }
+    .sidebar {
+      float: left;
+      width: 20%;
+      height: 100%;
+      background-color: #f7a2db;    /* Medium blue */
+    }
 
-  
+    .displayArea {
+      float: left;
+      width: 80%;
+      height: 100%;
+      background-color: #faf9f9;    /* Medium blue */
+    }
+
+    .section3 {
+      float: left;
+      height: 40%;
+      width: 100%;
+      padding: 1%;
+      background-color: #d8c261;    /* Medium blue */
+    }
+
+    .contentColumn1 {
+      float: left;
+      width:31%;
+      height: 100%;
+      margin: 1%;
+      background-color: #beac57;    /* Medium blue */
+    }
+
+    .contentColumn2 {
+      float: left;
+      width:31%;
+      height: 100%;
+      margin: 1%;
+      background-color: #beac57;    /* Medium blue */
+    }
+
+    .contentColumn3 {
+      float: left;
+      width:31%;
+      height: 100%;
+      margin: 1%;
+      background-color: #beac57;    /* Medium blue */
+    }
+
+    .contentRow1 {
+      float: inline-start;
+      height: 7%;
+      width: 100%;
+    }
+
+    .contentRow2 {
+      float: inline-start;
+      height: 60%;
+      width: 100%;
+    }
+
+    .inputHeader {
+      float: left;
+      width: 60%;
+      color: rgb(26, 24, 24);
+      background-color: #ecd75f;
+    }
+
+    .commentBtn {
+      float: right;
+      width: 60px;
+      height: 20px;
+      border-radius: 40px;
+      border:#eb4a4f;
+      background-color: #f7a2db;    /* Medium blue */
+    }
+
+    .inputBox {
+      float: left;
+      width: 100%;
+      height: 100%;
+      text-align: top;
+      border-style: inset;
+      background-color: aliceblue;
+    }
+
+    .contentRow3 {
+      float: inline-start;
+      height: 10%;
+      width: 100%;
+    }
+
+    .section4 {
+      float: left;
+      height: 5%;
+      width: 100%;
+      padding: 1%;
+      background-color: #3c8de9;    /* Medium blue */
+    }

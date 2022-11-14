@@ -7,16 +7,18 @@ INSERT INTO customers (id, customer_name, customer_phone_number) VALUES (1, 'Fel
 (3, 'Christopher Reeves', '719-271-xxxx'),
 (4, 'Joe Pesce', '719-271-xxxx'),
 (5, 'Ed Sheeran', '719-271-xxxx');
-INSERT INTO vehicles (id, vin, make, model, veh_year, customer_id) VALUES (1, '6dfasdfka5554fr57e5', 'Nissan', 'Pathfinder', 2015, 1), 
-(2, '6dfasdfka55djkahd47', 'Nissan', 'Murano', 2014, 2),
-(3, '6dfasdfka5465464648', 'Chevy', 'Malibu', 2007, 3),
-(4, '6dfasdfka55das468sd', 'Subaru', 'Outback', 2010, 4),
-(5, '6dfasdfka5ad5d8e1f2', 'Rolls', 'Kenardly', 2003, 5);
-INSERT INTO servicerepair (id, symptom, service_repair, repair_duration, tech_name, cust_name, veh_id) VALUES (1, 'Engine collant does not reach proper temperature', 'replaced coolant thermostat', 5, 'Alfred', 'Felicia Goldman', 1),
-(2, 'bald tires', 'replaced tires', 5, 'Butler', 'Johnathon Kent', 2),
-(3, 'Clunking Noise under hood', 'broken tie rod', 5, 'Sam', 'Christopher Reeves', 3),
-(4, 'black exhaust', 'replaced headgasket', 5, 'Willis', 'Joe Pesce', 4),
-(5, 'spatter vision in windshield', 'replaced windshield', 5, 'Danny Boy', 'Ed Sheeran', 5);
+
+INSERT INTO vehicles (img, id, vin, make, model, veh_year, customer_id) VALUES ('https://vexgateway.fastly.carvana.io/2001989770/hero.jpg?width=449', 1, '6dfasdfka5554fr57e5', 'Toyota', 'Tucson', 2016, 1), 
+('https://vexgateway.fastly.carvana.io/2002004453/hero.jpg?width=449', 2, '6dfasdfkakadshf5648', 'Lincoln', 'MKX', 2013, 2),
+('https://vexgateway.fastly.carvana.io/2001902251/hero.jpg?width=449', 3, '6dfasdfka5465464648', 'Hyundai', 'Elantra', 2016, 3),
+('https://vexgateway.fastly.carvana.io/2001731289/hero.jpg?width=449', 4, '6dfasdfka55das468sd', 'GMC', 'Terrain', 2017, 4),
+('https://vexgateway.fastly.carvana.io/2002066367/hero.jpg?width=449', 5, '6dfasdfka5ad5d8e1f2', 'Lexus', 'IS', 2011, 5);
+
+INSERT INTO servicerepair (img, id, symptom, service_repair, repair_duration, tech_name, cust_name, veh_id) VALUES ('https://vexgateway.fastly.carvana.io/2001989770/hero.jpg?width=449', 1, 'Engine collant does not reach proper temperature', 'replaced coolant thermostat', 5, 'Alfred', 'Felicia Goldman', 1),
+('https://vexgateway.fastly.carvana.io/2002004453/hero.jpg?width=449', 2, 'tires balding', 'tires replaced', 5, 'Max', 'Johnathon Kent', 3),
+('https://vexgateway.fastly.carvana.io/2001902251/hero.jpg?width=449', 3, 'Clunking Noise under hood', 'broken tie rod', 5, 'Sam', 'Christopher Reeves', 3),
+('https://vexgateway.fastly.carvana.io/2001731289/hero.jpg?width=449', 4, 'black exhaust', 'replaced headgasket', 5, 'Willis', 'Joe Pesce', 4),
+('https://vexgateway.fastly.carvana.io/2002066367/hero.jpg?width=449', 5, 'spatter vision in windshield', 'replaced windshield', 5, 'Danny Boy', 'Ed Sheeran', 5);
 
 --Return the id, title, and released_at all the movies ordered by from oldest to newest.
 -- SELECT id, title, released_at FROM movies ORDER BY released_at ASC;

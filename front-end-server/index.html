@@ -1,29 +1,69 @@
 <!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <title>Autoshop</title>
-    <link rel='stylesheet' href='styles.css'/>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoshop</title>
+  <link rel='stylesheet' href='styles.css'/>
   </head>
   <body>
+
     <script src="./index,js" defer></script>
     <div class='page'>
-      <div class='shopTitle'><h1 class="scottShop">Scott's Autoshop</h1></div>
-        <div class='titleHeader'>
-          <div class="navbar">
-            <div class="menu">
-              <div class='column'><button class="btn" id="serviceBtn">Click</button><p>Services</p></div>
-              <div class='column'><button class="btn" id="vehBtn">Click</button><p>Vehicles In Service</p></div>
-            </div>
+
+      <div class="section1" id="PageTitleHeaderMenu">
+        <div class="sectionOneColumn">
+          <div class="menu">
+            <div class='menuItem'><button class="menuBtn" id="serviceBtn">Click</button><p>Services</p></div>
+            <div class='menuItem'><button class="menuBtn" id="vehBtn">Click</button><p>Vehicles In Service</p></div>
           </div>
         </div>
-        
-      <div class='sidebar'>Sidebar</div>
-      <div class='content'><h5>We offer quality auto repairs in all areas, backed by years of experience!</h5>
-        <div class='column'><button class="btn" id="custBtn">Click</button><h5>Leave a comment:</h5><input id="customerInput" 
-          type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+        <div class="sectionOneColumn">
+          <div class="contactInfo" color="white"><p class="contactPara"><h3>Contact Us:</h3></p>
+            <p class="contactPara" color="white">Phone Number: (719) 271-xxxx</p><p class="contactPara"></p>
+            <p class="contactPara" color="white">Email: fake email</p><p class="contactPara"></p>
+          </div>
+        </div>
+        <div class="sectionOneColumn">
+          <img src="./logo1.jpg" class="img1" alt="Responsive image">
+        </div>
+        <div class="sectionOneColumn">
+          <img src="./logo.jpg" class="img2" alt="Responsive image">
+        </div>
       </div>
-      <div class='footer'>Footer</div>
+
+
+      <div class="section2" id="sidebarDisplayArea">
+        <div class='sidebar'>Sidebar</div>
+        <div class='displayArea' id="displayArea"></div>
+      </div>
+
+
+
+      <div class="section3" id="commentSection">
+
+          <div class='contentColumn1'>
+            <div class='contentRow1'>
+              <h5 class="inputHeader">Leave a comment: Type Below</h5>
+              <button class="commentBtn" id="custBtn" border-style="inset";>Click</button>
+            </div>
+            <div class='contentRow2'>
+              <input id="customerInput" type="text" class="inputBox" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class='contentRow3'></div>
+          </div>
+          <div class='contentColumn2'></div>
+          <div class='contentColumn3'></div>
+
+      </div>
+
+      
+
+      <div class="section4" id="footerSection">
+        <div class='footer'>Footer</div>
+      </div>
+
     </div>
   </body>
 </html>

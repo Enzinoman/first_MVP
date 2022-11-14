@@ -1,8 +1,11 @@
 const express = require('express');
 const { Client } = require('pg');
 const app = express();
-app.use(express.static('public'));
-const PORT = 8015;
+const cors = require('cors');
+app.use(express.json());
+app.use(cors());
+const PORT = 8000;
+
 
 const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
 const client = new Client({
@@ -35,7 +38,11 @@ client.connect(); */
     })
     .catch(e => console.error(e.stack))
 });  */
-
+/* app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next()
+}); */
 
 app.get('/', (req,res)=>{
   client.query('SELECT * FROM servicerepair')
@@ -92,6 +99,7 @@ app.post('/customers', (req, res) => {
 
 app.post('/vehicles', (req, res) => {
     let vehicles = req.body;
+    let carImage = vehicles.img;
     let id = vehicles.id;
     let vin = vehicles.vin;
     let make = vehicles.make;
@@ -99,8 +107,8 @@ app.post('/vehicles', (req, res) => {
     let vehYear = vehicles.veh_year;
     let customerId = vehicles.customer_id;
     console.log(vehicles);
-    client.query(`INSERT INTO vehicles (id, vin, make, model, veh_year, customer_id)
-    VALUES (${id}, '${vin}', '${make}', '${model}', ${vehYear}, ${customerId}) RETURNING *`)
+    client.query(`INSERT INTO vehicles (img, id, vin, make, model, veh_year, customer_id)
+    VALUES ('${carImage}', ${id}, '${vin}', '${make}', '${model}', ${vehYear}, ${customerId}) RETURNING *`)
     .then(result =>{
         
         res.status(200).send(result.rows);
@@ -109,6 +117,7 @@ app.post('/vehicles', (req, res) => {
 
 app.post('/servicerepair', (req, res) => {
     let services = req.body;
+    let carImage = services.img;
     let servicesId = services.id;
     let symptom = services.symptom;
     let repair = services.service_repair;
@@ -118,7 +127,7 @@ app.post('/servicerepair', (req, res) => {
     let vehId = services.veh_id;
     console.log(services);
     client.query(`INSERT INTO servicerepair (id, syptom, service_repair, repair_duration, tech_name, cust_name, veh_id)
-    VALUES (${servicesId}, '${symptom}', '${repair}', ${repairTime}, '${techName}', '${custName}', ${vehId}) RETURNING *`)
+    VALUES ('${carImage}', ${servicesId}, '${symptom}', '${repair}', ${repairTime}, '${techName}', '${custName}', ${vehId}) RETURNING *`)
     .then(result =>{
         
         res.status(200).send(result.rows);
