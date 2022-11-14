@@ -1,3 +1,5 @@
+const config = require('./config.js')[process.env.NODE_ENV||"dev"];
+
 const express = require('express');
 const { Client } = require('pg');
 const app = express();
@@ -7,10 +9,10 @@ app.use(cors());
 const PORT = 8000;
 
 
-const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
+// const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
 
 const client = new Client({
-    connectionString: connectionString,
+    connectionString: config.connectionString,
 });
 client.connect();
 
