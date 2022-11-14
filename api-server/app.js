@@ -6,7 +6,8 @@ const app = express();
 const cors = require('cors');
 app.use(express.json());
 app.use(cors());
-const PORT = 8000;
+//const PORT = 8000;
+const PORT = config.port;
 
 
 // const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
