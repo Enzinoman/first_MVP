@@ -2,11 +2,11 @@ DELETE FROM customers *;
 DELETE FROM vehicles *;
 DELETE FROM servicerepair *;
 
-INSERT INTO customers (id, customer_name, customer_phone_number, customer_feedback) VALUES (1, 'Felicia Goldman', '719-271-xxxx', ""),
-(2, 'Johnathon Kent', '719-271-xxxx', ""),
-(3, 'Christopher Reeves', '719-271-xxxx', ""),
-(4, 'Joe Pesce', '719-271-xxxx', ""),
-(5, 'Ed Sheeran', '719-271-xxxx', "");
+INSERT INTO customers (id, customer_name, customer_phone_number, customer_feedback) VALUES (1, 'Felicia Goldman', '719-271-xxxx', 'feedback'),
+(2, 'Johnathon Kent', '719-271-xxxx', 'feedback'),
+(3, 'Christopher Reeves', '719-271-xxxx', 'feedback'),
+(4, 'Joe Pesce', '719-271-xxxx', 'feedback'),
+(5, 'Ed Sheeran', '719-271-xxxx', 'feedback');
 
 INSERT INTO vehicles (img, id, vin, make, model, veh_year, customer_id) VALUES ('https://vexgateway.fastly.carvana.io/2001989770/hero.jpg?width=449', 1, '6dfasdfka5554fr57e5', 'Toyota', 'Tucson', 2016, 1), 
 ('https://vexgateway.fastly.carvana.io/2002004453/hero.jpg?width=449', 2, '6dfasdfkakadshf5648', 'Lincoln', 'MKX', 2013, 2),

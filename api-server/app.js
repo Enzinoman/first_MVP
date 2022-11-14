@@ -8,6 +8,7 @@ const PORT = 8000;
 
 
 const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
+
 const client = new Client({
     connectionString: connectionString,
 });
