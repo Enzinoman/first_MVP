@@ -88,9 +88,10 @@ app.post('/customers', (req, res) => {
     let id = customers.id;
     let customerName = customers.customer_name;
     let phone = customers.customer_phone_number;
+    let feedback = customers.customer_feedback;
     console.log(customers);
     client.query(`INSERT INTO customers (id, customer_name, customer_phone_number)
-    VALUES (${id}, '${customerName}', '${phone}') RETURNING *`)
+    VALUES (${id}, '${customerName}', '${phone}', '${feedback}') RETURNING *`)
     .then(result =>{
         
         res.status(200).send(result.rows);

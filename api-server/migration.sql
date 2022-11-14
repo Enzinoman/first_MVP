@@ -7,7 +7,8 @@ DROP TABLE servicerepair CASCADE;
 CREATE TABLE customers(
     id serial PRIMARY KEY,
     customer_name text,
-    customer_phone_number text
+    customer_phone_number text,
+    customer_feedback text
 
     
 );

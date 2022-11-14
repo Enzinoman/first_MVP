@@ -23,6 +23,7 @@ function getServicedata(){
   fetch("http://localhost:8000/servicerepair", requestOptions)
     .then(response => response.json())
     .then(result => {
+    
 
       JSON.parse(displayServices(result));
         
@@ -32,13 +33,19 @@ function getServicedata(){
     .catch(error => console.log('error', error));
 
   }
-       document.getElementById('displayArea').innerHTML = "";
+       
 function displayServices(results){
+  const displayArea = document.getElementById('displayArea');
+  // var mydiv = document.getElementById('FirstDiv');
+  console.log(displayArea);
+while(displayArea.firstChild) {
+  displayArea.removeChild(displayArea.firstChild);
+}
+  
 for(let i = 0; results.length; i++){
-    const displayArea = document.getElementById('displayArea');
+    
     const services = results[i];
     console.log(results);
-    const carImage  = services.carImage;
     const symptom = services.symptom;
     const repair = services.service_repair;
     const techName = services.tech_name;
@@ -63,6 +70,7 @@ for(let i = 0; results.length; i++){
     ul.appendChild(liTechName);
 
     displayArea.appendChild(ul);
+    
    
 }
 }
