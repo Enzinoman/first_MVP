@@ -10,7 +10,6 @@ const PORT = 8000;
 //const PORT = config.port;
 
 
-// 
 const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
 
 const client = new Client({
@@ -22,32 +21,7 @@ client.connect();
 
 
 
-/* const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
-const client = new Client({
-    connectionString: connectionString,
-});
-client.connect(); */
 
-/* app.get('/', (req, res) => {
-    res.send('Hello World!');
-
-
-}); */
-
-/* app.get('/customers', (req, res) => {
-    // client.query('SELECT * FROM customers')
-    pool.query('SELECT * FROM customers')
-    .then(result => {
-        //console.log(result.rows[0])
-        res.send(result.rows);
-    })
-    .catch(e => console.error(e.stack))
-});  */
-/* app.all('/', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next()
-}); */
 
 app.get('/', (req,res)=>{
   client.query('SELECT * FROM servicerepair')
