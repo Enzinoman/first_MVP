@@ -6,8 +6,8 @@ const app = express();
 const cors = require('cors');
 app.use(express.json());
 app.use(cors());
-//const PORT = 8000;
-const PORT = config.port;
+const PORT = 8000;
+// const PORT = config.port;
 
 
 // const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
@@ -93,8 +93,9 @@ app.post('/customers', (req, res) => {
     let customerName = customers.customer_name;
     let phone = customers.customer_phone_number;
     let feedback = customers.customer_feedback;
-    console.log(customers);
-    client.query(`INSERT INTO customers (id, customer_name, customer_phone_number)
+    //console.log(customers);
+    // ExampleInsert Code: http POST localhost:8000/customers id=7 customer_name='Jericho' customer_phone_number='7192711111' customer_feedback='hello'
+    client.query(`INSERT INTO customers (id, customer_name, customer_phone_number, customer_feedback)
     VALUES (${id}, '${customerName}', '${phone}', '${feedback}') RETURNING *`)
     .then(result =>{
         
@@ -131,7 +132,7 @@ app.post('/servicerepair', (req, res) => {
     let custName = services.cust_name;
     let vehId = services.veh_id;
     console.log(services);
-    client.query(`INSERT INTO servicerepair (id, syptom, service_repair, repair_duration, tech_name, cust_name, veh_id)
+    client.query(`INSERT INTO servicerepair (img, id, symptom, service_repair, repair_duration, tech_name, cust_name, veh_id)
     VALUES ('${carImage}', ${servicesId}, '${symptom}', '${repair}', ${repairTime}, '${techName}', '${custName}', ${vehId}) RETURNING *`)
     .then(result =>{
         

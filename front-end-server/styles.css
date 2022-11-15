@@ -116,6 +116,22 @@
       background-color: #beac57;    /* Medium blue */
     }
 
+    .technicianFormHeader {
+    text-align: center;
+
+    }
+
+    #customerFeedback {
+      float: left;
+      width: 100%;
+      height: 100%;
+      text-align: top;
+      border-style: inset;
+      background-color: aliceblue;
+    }
+
+
+
     .contentColumn3 {
       float: left;
       width:31%;

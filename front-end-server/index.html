@@ -54,15 +54,18 @@
             <div class='contentRow3'></div>
           </div>
           <div class='contentColumn2'>
+           <h1 class="technicianFormHeader">Customers: Enter your feedback below.</h1>
             <div class="inputContainer">
-              <form id="customerInputForm">
-                <input id="name">
-                <input id="name">
-                <input id="name">
-                <input id="name">
-                <button type="submit" id="submit">Submit</button>
+              <form class="form" id="form">
+                <input id="customerId" name="id" placeholder="Serial Id" type="number" required/>
+                <input id="customerName" name="customer_name" placeholder="Customer Name" type="text" required/>
+                <input id="customerPhone" name="customer_phone_number" placeholder="Cutomer Phone Number" type="text" required/>
+                <input id="customerFeedback" name="customer_feedback" placeholder="Feedback" type="text" required/>
+                <button class="feedbackButton" type="submit" id="submit">Submit</button>
               </form>
+              
             </div>
+            <div class="div" id="uniquereturn"></div>
           </div>
           <div class='contentColumn3'></div>
 
@@ -76,4 +79,5 @@
 
     </div>
   </body>
+  
 </html>

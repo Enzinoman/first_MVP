@@ -3,8 +3,96 @@
   const vehButton = document.getElementById('vehBtn');
   const custButton = document.getElementById('custBtn');
   let content = document.getElementById('content');
+  const feedbackButton = document.getElementById('feedbackSubmit');
 
- 
+
+  const form = document.getElementById('form');
+
+  form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      //const customer = {};
+      /* customer.id = document.querySelector("#customerId").value;
+      customer.customer_name = document.querySelector("#customerName").value;
+      customer.customer_phone_number = document.querySelector("#customerPhone").value;
+      customer.customer_feedback = document.querySelector("#customerFeedback").value;
+*/
+      id = parseInt(document.querySelector("#customerId").value);
+      customer_name = document.querySelector("#customerName").value;
+      customer_phone_number = document.querySelector("#customerPhone").value;
+      customer_feedback = document.querySelector("#customerFeedback").value;
+      let customer = {
+        "id": id, 
+        "customer_name": customer_name, 
+        "customer_phone_number": customer_phone_number, 
+        "customer_feedback": customer_feedback
+      };
+      console.log(customer);
+      fetch('https://localhost:8000/customers', {
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json'
+
+        },
+        body: JSON.stringify(customer)
+
+    })
+    .then(res => {
+      if(res.ok){console.log("GET request successful")}
+      else {console.log("GET request unsuccessful")}
+      return res
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+
+
+      //console.log(customer);
+
+      /* var requestOptions = {
+        method: 'POST',
+        redirect: 'follow',
+        headers: {
+          "Content-Type": "application/json"
+
+      },
+        body: JSON.stringify(customer)
+      };
+      
+      fetch(`http://localhost:8000/customers`, requestOptions)
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error)); */
+
+
+  });
+
+
+  
+    
+      /* const formData = new FormData(form);
+      console.log(JSON.stringify(formData));
+      console.log([...formData]);
+      let arrOfArrays = [...formData];
+      console.log(arrOfArrays[0][0]);
+      let newObject = {};
+      newObject[arrOfArrays[0][0]] = parseInt(arrOfArrays[0][1]);
+      newObject[arrOfArrays[1][0]] = arrOfArrays[1][1];
+      newObject[arrOfArrays[2][0]] = arrOfArrays[2][1];
+      newObject[arrOfArrays[3][0]] = arrOfArrays[3][1]; */
+      //console.log(JSON.stringify(newObject));
+
+
+      
+  /* {
+  {
+  id: '7',
+  custoer_name: 'Jericho',
+  customer_phone_number: '7192711111',
+  customer_feedback: 'hello'
+}
+} */
+
+
  
   serviceButton.addEventListener('click', getServicedata);
   // vehButton.addEventListener('click', getVehicleData);
@@ -37,7 +125,7 @@ function getServicedata(){
 function displayServices(results){
   const displayArea = document.getElementById('displayArea');
   // var mydiv = document.getElementById('FirstDiv');
-  console.log(displayArea);
+  //console.log(displayArea);
 while(displayArea.firstChild) {
   displayArea.removeChild(displayArea.firstChild);
 }
@@ -45,7 +133,7 @@ while(displayArea.firstChild) {
 for(let i = 0; results.length; i++){
     
     const services = results[i];
-    console.log(results);
+    //console.log(results);
     const symptom = services.symptom;
     const repair = services.service_repair;
     const techName = services.tech_name;
