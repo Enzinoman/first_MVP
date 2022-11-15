@@ -97,6 +97,7 @@
       height: 40%;
       width: 100%;
       padding: 1%;
+      overflow: auto;
       background-color: #d8c261;    /* Medium blue */
     }
 
@@ -105,7 +106,7 @@
       width:31%;
       height: 100%;
       margin: 1%;
-      background-color: #beac57;    /* Medium blue */
+      background-color: #b39e39;    /* Medium blue */
     }
 
     .contentColumn2 {
@@ -137,7 +138,29 @@
       width:31%;
       height: 100%;
       margin: 1%;
-      background-color: #beac57;    /* Medium blue */
+      background-color: #b39e39;    /* Medium blue */
+    }
+
+    .editCustomerFormHeader {
+      text-align: center;
+    }
+
+    .editCustomerSubFormHeader {
+      text-align: center;
+    }
+
+    .editCustomerFormHeader2 {
+      text-align: center;
+      height: 1%;
+      width: 100%;
+      background-color: rgb(236, 204, 161);
+    }
+
+    .editCustomerFormHeader3 {
+      text-align: center;
+      height: .25%;
+      width: 100%;
+      background-color: rgb(236, 204, 161);
     }
 
     .contentRow1 {
@@ -152,9 +175,10 @@
       width: 100%;
     }
 
-    .inputHeader {
-      float: left;
-      width: 60%;
+    .outputHeader {
+      float: center;
+      text-align: center;
+      width: 100%;
       color: rgb(26, 24, 24);
       background-color: #ecd75f;
     }
@@ -168,7 +192,7 @@
       background-color: #f7a2db;    /* Medium blue */
     }
 
-    .inputBox {
+    .outputBox {
       float: left;
       width: 100%;
       height: 100%;
@@ -189,4 +213,11 @@
       width: 100%;
       padding: 1%;
       background-color: #3c8de9;    /* Medium blue */
+    }
+
+    .innerSpace {
+      text-align: center;
+      height: .25%;
+      width: 100%;
+      background-color: rgb(236, 204, 161);
     }

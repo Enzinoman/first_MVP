@@ -6,20 +6,15 @@
   const feedbackButton = document.getElementById('feedbackSubmit');
 
 
-  const form = document.getElementById('form');
+  const form = document.getElementById('newCust');
 
   form.addEventListener('submit', function(e) {
       e.preventDefault();
-      //const customer = {};
-      /* customer.id = document.querySelector("#customerId").value;
-      customer.customer_name = document.querySelector("#customerName").value;
-      customer.customer_phone_number = document.querySelector("#customerPhone").value;
-      customer.customer_feedback = document.querySelector("#customerFeedback").value;
-*/
+
       id = parseInt(document.querySelector("#customerId").value);
       customer_name = document.querySelector("#customerName").value;
       customer_phone_number = document.querySelector("#customerPhone").value;
-      customer_feedback = document.querySelector("#customerFeedback").value;
+      customer_feedback = document.querySelector("#customerFeedback").value.toString();
       let customer = {
         "id": id, 
         "customer_name": customer_name, 
@@ -27,18 +22,19 @@
         "customer_feedback": customer_feedback
       };
       console.log(customer);
-      fetch('https://localhost:8000/customers', {
+      fetch('http://localhost:8000/customers', {
         method:"POST",
         headers: {
             'Content-Type': 'application/json'
 
         },
         body: JSON.stringify(customer)
+        
 
     })
     .then(res => {
-      if(res.ok){console.log("GET request successful")}
-      else {console.log("GET request unsuccessful")}
+      if(res.ok){console.log("POST request successful")}
+      else {console.log("POST request unsuccessful")}
       return res
     })
     .then(res => res.json())
@@ -46,53 +42,144 @@
     .catch(error => console.log(error))
 
 
-      //console.log(customer);
+  });
 
-      /* var requestOptions = {
-        method: 'POST',
-        redirect: 'follow',
-        headers: {
-          "Content-Type": "application/json"
 
-      },
-        body: JSON.stringify(customer)
-      };
+
+  const editName = document.getElementById('editNameForm');
+
+  editName.addEventListener('submit', function(e) {
+      e.preventDefault();
+      console.log("I'm a Patch");
+      myNameId = parseInt(document.querySelector("#editNameIdInput").value);
+      myName = document.querySelector("#editNameInput").value;
+      console.log(myNameId);
       
-      fetch(`http://localhost:8000/customers`, requestOptions)
-        .then(response => response.json())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error)); */
+      let custNameEdit = {
+        "customer_name": myName
+      };
+      console.log(custNameEdit);
+      fetch(`http://localhost:8000/customers/${myNameId}`, {
+        method:"PATCH",
+        headers: {
+            'Content-Type': 'application/json'
+
+        },
+        body: JSON.stringify(custNameEdit)
+        
+
+    })
+    .then(res => {
+      if(res.ok){console.log("PATCH request successful")}
+      else {console.log("PATCH request unsuccessful")}
+      return res
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
 
 
   });
 
 
-  
-    
-      /* const formData = new FormData(form);
-      console.log(JSON.stringify(formData));
-      console.log([...formData]);
-      let arrOfArrays = [...formData];
-      console.log(arrOfArrays[0][0]);
-      let newObject = {};
-      newObject[arrOfArrays[0][0]] = parseInt(arrOfArrays[0][1]);
-      newObject[arrOfArrays[1][0]] = arrOfArrays[1][1];
-      newObject[arrOfArrays[2][0]] = arrOfArrays[2][1];
-      newObject[arrOfArrays[3][0]] = arrOfArrays[3][1]; */
-      //console.log(JSON.stringify(newObject));
 
+  const editPhoneNum = document.getElementById('editPhoneForm');
+
+  editPhoneNum.addEventListener('submit', function(e) {
+      e.preventDefault();
+      myNameId2 = parseInt(document.querySelector("#editPhoneIdInput").value);
+      myPhone = document.querySelector("#editPhonInput").value;
+      
+      let custPhoneEdit = {
+        "customer_name": myPhone
+      };
+      console.log(custPhoneEdit);
+      fetch(`http://localhost:8000/customers/${myNameId2}`, {
+        method:"PATCH",
+        headers: {
+            'Content-Type': 'application/json'
+
+        },
+        body: JSON.stringify(custPhoneEdit)
+        
+
+    })
+    .then(res => {
+      if(res.ok){console.log("PATCH request successful")}
+      else {console.log("PATCH request unsuccessful")}
+      return res
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+
+
+  });
+  
+
+  const editFeedbackNum = document.getElementById('editFeedbackForm');
+
+  editFeedbackNum.addEventListener('submit', function(e) {
+      e.preventDefault();
+      myNameId3 = parseInt(document.querySelector("#editFeedbackIdInput").value);
+      myFeedback = document.querySelector("#editFeedbackInput").value;
+      
+      let custFeedbackEdit = {
+        "customer_feedback": myFeedback
+      };
+      console.log(custFeedbackEdit);
+      fetch(`http://localhost:8000/customers/${myNameId3}`, {
+        method:"PATCH",
+        headers: {
+            'Content-Type': 'application/json'
+
+        },
+        body: JSON.stringify(custFeedbackEdit)
+        
+
+    })
+    .then(res => {
+      if(res.ok){console.log("PATCH request successful")}
+      else {console.log("PATCH request unsuccessful")}
+      return res
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+
+
+  });
+
+
+
+  const deleteRecord = document.getElementById('deleteIdForm');
+
+  deleteRecord.addEventListener('submit', function(e) {
+      e.preventDefault();
+      myNameId4 = parseInt(document.querySelector("#deleteIdInput").value);
 
       
-  /* {
-  {
-  id: '7',
-  custoer_name: 'Jericho',
-  customer_phone_number: '7192711111',
-  customer_feedback: 'hello'
-}
-} */
+      let custRecordDelete = {
+        "id": myNameId4
+      };
+      console.log(custRecordDelete);
+      fetch(`http://localhost:8000/customers/${myNameId4}`, {
+        method:"DELETE",
+        mode: 'cors',
+    })
+    .then(res => {
+      if(res.ok){console.log("DELETE request successful")}
+      else {console.log("DELETE request unsuccessful")}
+      return res
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
 
 
+  });
+
+  
  
   serviceButton.addEventListener('click', getServicedata);
   // vehButton.addEventListener('click', getVehicleData);

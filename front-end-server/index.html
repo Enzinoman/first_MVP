@@ -45,29 +45,75 @@
 
           <div class='contentColumn1'>
             <div class='contentRow1'>
-              <h5 class="inputHeader">Leave a comment: Type Below</h5>
-              <button class="commentBtn" id="custBtn" border-style="inset";>Click</button>
+              <h2 class="outputHeader">Review</h2>
             </div>
             <div class='contentRow2'>
-              <input id="customerInput" type="text" class="inputBox" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              <div id="customerInput" class="outputBox"></div>
             </div>
             <div class='contentRow3'></div>
           </div>
           <div class='contentColumn2'>
-           <h1 class="technicianFormHeader">Customers: Enter your feedback below.</h1>
+           <h1 class="technicianFormHeader">Customers: Provide your initial feedback here. We look forward to hearing from you.</h1>
             <div class="inputContainer">
-              <form class="form" id="form">
+              <form class="form" id="newCust">
                 <input id="customerId" name="id" placeholder="Serial Id" type="number" required/>
                 <input id="customerName" name="customer_name" placeholder="Customer Name" type="text" required/>
                 <input id="customerPhone" name="customer_phone_number" placeholder="Cutomer Phone Number" type="text" required/>
                 <input id="customerFeedback" name="customer_feedback" placeholder="Feedback" type="text" required/>
-                <button class="feedbackButton" type="submit" id="submit">Submit</button>
+                <button class="feedbackButton" type="submit" id="custSubmit">Submit</button>
               </form>
               
             </div>
-            <div class="div" id="uniquereturn"></div>
+            
           </div>
-          <div class='contentColumn3'></div>
+          <div class='contentColumn3'>
+            <div class="div" id="uniquereturn">
+              <h1 class="editCustomerFormHeader">Provide Edits to your feedback.</h1>
+              <h5 class="editCustomerSubFormHeader">(Entered a Typo, or feel you need to update your feedback or information to your feedbac form?) Choose from your options below which information you'd like to edit and then click 'Edit' next to your selection. We look forward to hearing from you.</h5>
+              <h1 class="editCustomerFormHeader2">----------</h1>
+            <div class="inputContainer">
+              <p id="inputContainerDisclaimer">You have the option of editing or deleting your record. 
+                Whichever you choose, you are required to enter your record id before clicking 'Edit' or 'Delete'.
+              </p>
+              <div class="div">
+                <h1 class="editCustomerFormHeader3">----------</h1>
+              </div>
+              <form class="form" id="deleteIdForm">
+                <p id="idPara">Delete Record</p>
+                <input id="deleteIdInput" name="idDelete" placeholder="number here" type="number" required/>
+                 <button class="deleteButton" type="submit" id="deleteRecordBtn">Delete</button>
+              </form>
+              <div class="div">
+                <h3 class="innerSpace">----------</h3>
+              </div>
+              <form class="form" id="editNameForm">
+                <p id="namePara">Name</p>
+                <input id="editNameIdInput" name="nameIdEdit" placeholder="Enter record ID here" type="number" required/>
+                <input id="editNameInput" name="nameEdit" placeholder="what is your name" type="text" required/>
+                <button class="editButton" type="submit" id="changeNameBtn">Edit</button>
+              </form>
+              <div class="div">
+                <h3 class="innerSpace">----------</h3>
+              </div>
+             <form class="form" id="editPhoneForm">
+                <p id="namePara">Phone Number</p>
+                <input id="editPhoneIdInput" name="phoneIdEdit" placeholder="Enter record ID here" type="number" required/>
+                <input id="editPhonInput" name="phoneEdit" placeholder="(xxx)xxx-xxxx" type="text" required/>
+                <button class="editButton" type="submit" id="changePhoneBtn">Edit</button>
+              </form>
+              <div class="div">
+                <h3 class="innerSpace">----------</h3>
+              </div>
+              <form class="form" id="editFeedbackForm">
+                <p id="namePara">Feedback</p>
+                <input id="editFeedbackIdInput" name="feedbackIdEdit" placeholder="Enter record ID here" type="number" required/>
+                <input id="editFeedbackInput" name="feedbackEdit" placeholder="Provide new feedback" type="text" required/>
+                <button class="editButton" type="submit" id="changeFeedbackBtn">Edit</button>
+              </form>
+
+            </div>
+            </div>
+          </div>
 
       </div>
 

@@ -7,10 +7,11 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 const PORT = 8000;
-// const PORT = config.port;
+//const PORT = config.port;
 
 
-// const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
+// 
+const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/autoshop';
 
 const client = new Client({
     connectionString: config.connectionString,
@@ -93,7 +94,7 @@ app.post('/customers', (req, res) => {
     let customerName = customers.customer_name;
     let phone = customers.customer_phone_number;
     let feedback = customers.customer_feedback;
-    //console.log(customers);
+    console.log('${customers}');
     // ExampleInsert Code: http POST localhost:8000/customers id=7 customer_name='Jericho' customer_phone_number='7192711111' customer_feedback='hello'
     client.query(`INSERT INTO customers (id, customer_name, customer_phone_number, customer_feedback)
     VALUES (${id}, '${customerName}', '${phone}', '${feedback}') RETURNING *`)
@@ -161,6 +162,7 @@ app.patch("/customers/:id", (req, res) => {
   app.patch("/vehicles/:id", (req, res) => {
     console.log(req.body);
     let vehicle = req.body;
+    console.log(req.body);
     let elements = [];
     for (element in vehicle) {
       console.log(element, vehicle[element]);

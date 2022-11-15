@@ -1,6 +1,6 @@
 module.exports = {
     dev:{
-        connectionString: 'postgresql://postgres:docker@127.0.0.1:5432/autoshop'+ "?ssl=true",
+        connectionString: 'postgresql://postgres:docker@127.0.0.1:5432/autoshop',
         port: '8000'
     },
     production:{
