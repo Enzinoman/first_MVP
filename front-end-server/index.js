@@ -1,11 +1,12 @@
  // import {something, somethingElse} from "./components.js";
  const serviceButton = document.getElementById('serviceBtn');
-  const vehButton = document.getElementById('vehBtn');
+  const custReportButton = document.getElementById('vehBtn');
   const custButton = document.getElementById('custBtn');
-  let content = document.getElementById('content');
+  const postSubmitBUtton = document.getElementById('changeNameBtn');
+   let content = document.getElementById('content');
   const feedbackButton = document.getElementById('feedbackSubmit');
-  const apiURL = "https://api-server-wb6x.onrender.com/";
-  //const apiURL = "http://localhost:8000/";
+  //const apiURL = "https://api-server-wb6x.onrender.com/";
+  const apiURL = "http://localhost:8000/";
 
   const form = document.getElementById('newCust');
 
@@ -35,7 +36,8 @@
     })
     .then(res => {
       if(res.ok){console.log("POST request successful")}
-      else {console.log("POST request unsuccessful")}
+      else {console.log("POST request unsuccessful")};
+      
       return res
     })
     .then(res => res.json())
@@ -251,6 +253,75 @@ for(let i = 0; results.length; i++){
 }
 }
 
+custReportButton.addEventListener('click', getCustomerData);
+
+function getCustomerData(){
+
+
+  var options = {
+    method: 'GET',
+    redirect: 'follow',
+    //mode: "no-cors"
+  }
+  
+  fetch(apiURL+"customers", options)
+    .then(response => response.json())
+    .then(result => {
+    
+
+      JSON.parse(displayCustomersAndRemarks(result));
+        
+    // something();
+    // somethingElse();
+    })
+    .catch(error => console.log('error', error));
+
+  }
+
+
+function displayCustomersAndRemarks(results){
+  const outputBox = document.getElementById('customerInput');
+  // var mydiv = document.getElementById('FirstDiv');
+  //console.log(displayArea);
+while(outputBox.firstChild) {
+  outputBox.removeChild(outputBox.firstChild);
+}
+  
+for(let i = 0; results.length; i++){
+    
+    const customers = results[i];
+    //console.log(results);
+    const index = customers.id;
+    const custName = customers.customer_name;
+    const custPhone = customers.customer_phone_number;
+    const custfeedback = customers.customer_feedback;
+
+    const red = document.createElement('h3');
+    const ul = document.createElement('ul');
+    const custIndex = document.createElement('li');
+    red.style.color = 'red';
+    red.innerText = index;
+    const name = document.createElement('h3');
+    name.innerText = "Customer: " + custName;
+    const phone = document.createElement('li');
+    phone.innerText = "Phone Number: " + custPhone;
+    const feedback = document.createElement('li');
+    feedback.innerText = "Feedback: " + custfeedback;
+    const lineBreak = document.createElement('li');
+    lineBreak.innerText = "------------";
+    custIndex.appendChild(red);
+    ul.appendChild(custIndex);
+    ul.appendChild(name);
+    ul.appendChild(phone);
+    ul.appendChild(feedback);
+    ul.appendChild(lineBreak);
+ 
+
+    outputBox.appendChild(ul);
+    
+   
+}
+}
 
 
   

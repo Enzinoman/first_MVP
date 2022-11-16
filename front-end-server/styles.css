@@ -21,13 +21,22 @@
     padding: 1%;
 
   }
-  .sectionOneColumn {
+  
+  .contactColumn {
     float: left;
-    width: 25%;
     height: 100%;
     padding: 0.006%;
     margin: 0%;
   }
+
+  #menuNavColumn {
+    width: 28%;
+  }
+
+  #contactColumn {
+    width: 28%;
+  }
+
 
   .menu {
     height: 100%;
@@ -89,7 +98,17 @@
       float: left;
       width: 80%;
       height: 100%;
+      padding: 3%;
       background-color: #faf9f9;    /* Medium blue */
+    }
+
+    .work1 {
+      float: left;
+    }
+
+    .rowNow {
+      margin-left: 50%;
+      float: right;
     }
 
     .section3 {
@@ -197,7 +216,9 @@
       width: 100%;
       height: 100%;
       text-align: top;
+      padding-left: 3%;
       border-style: inset;
+      overflow: auto;
       background-color: aliceblue;
     }
 
@@ -226,6 +247,17 @@
      float: left;
      color: #9225ec;
 
+    }
+
+    .button {
+      text-align: center;
+      float: left;
+      width: 60px;
+      height: 20px;
+      margin: 2%;
+      border-radius: 40px;
+      border:#eb4a4f;
+      background-color: #f7a2db;    /* Medium blue */
     }
 
     
